@@ -1,0 +1,111 @@
+
+:root {
+    --accent-color: #00abec;
+    --accent-hover: #0093ca;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --tile-text: #ffffff;
+    --light-grey: #f2f2f2;
+    --border-grey: #cccccc;
+}
+
+.main-content {
+    max-width: 1100px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe WP", "Segoe UI", Segoe, Tahoma, Helvetica, sans-serif;
+    border-radius: 0 !important;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* тост */
+#toast {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    background: #1f1f1f;
+    color: #ffffff;
+    padding: 15px 20px;
+    z-index: 10000;
+    transition: top 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+    border-bottom: 3px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#toast.show {
+    top: 0;
+}
+
+#toast .toast-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#toast .toast-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+    border-color: #333333;
+    color: #333333;
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.btn-full {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}

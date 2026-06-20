@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millennium Market (MEmarket) — Магазин приложений Windows Phone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- тост -->
+    <div id="toast">
+        <div class="toast-content">
+            <div class="toast-icon"></div>
+            <div>
+                <strong id="toast-title" style="display: block; font-size: 14px;">Система</strong>
+                <span id="toast-msg" style="font-size: 12px; color: #ccc;">Описание действия</span>
+            </div>
+        </div>
+        <span onclick="hideToast()" style="cursor:pointer; font-size: 18px;">✕</span>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-area" onclick="filterCategory('all')">
+                 <img src="assets/icon.svg" alt="Logo" class="logo-icon">
+                 <div class="logo-text">Millennium Market</div>
+                </div>
+            <div class="theme-selector">
+                <span>ЦВЕТ ТЕМЫ:</span>
+                <div class="color-dot" style="background-color: #00abec;" onclick="setTheme('#00abec', '#0093ca')" title="Teal"></div>
+                <div class="color-dot" style="background-color: #d80073;" onclick="setTheme('#d80073', '#b0005d')" title="Magenta"></div>
+                <div class="color-dot" style="background-color: #a20025;" onclick="setTheme('#a20025', '#7d001b')" title="Crimson"></div>
+                <div class="color-dot" style="background-color: #00a300;" onclick="setTheme('#00a300', '#008000')" title="Emerald"></div>
+                <div class="color-dot" style="background-color: #f0a30a;" onclick="setTheme('#f0a30a', '#cf8b00')" title="Mango"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основная навигация -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li class="active"><a href="index.html">Главная</a></li>
+                <li><a href="download/index.html">Скачать</a></li>
+                <li><a href="docs/index.html">Документация</a></li>
+                <li><a href="about/index.html">О проекте</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero-section">
+        <div class="hero-container">
+            <div class="hero-info">
+                <h1>новая жизнь для <strong>Windows Phone</strong></h1>
+                <p>Добро пожаловать на сайт магазина приложений MEmarket для Windows Phone 8.1 и Windows 10 Mobile. Проект восстанавливает экосистему на базе независимых репозиториев, наполняемых сообществом. Загружайте клиенты, подключайте сторонние источники и оставайтесь на любимой платформе.</p>
+                <div class="hero-actions">
+                    <a href="download/index.html" class="btn btn-primary">Скачать клиенты</a>
+                    <a href="https://t.me/SimpSoft" target="_blank" class="btn btn-secondary">Подписаться на ТГК SimpleSoftware</a>
+                </div>
+            </div>
+
+             <img src="assets/phone.png" alt="WPhone" class="hero-phone-img">
+        </div>
+    </section>
+
+    <section class="main-content" style="margin-top: 40px; margin-bottom: 20px;">
+        <div style="border: 2px solid var(--border-grey); padding: 30px; background-color: var(--light-grey); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h2 style="font-weight: 100; font-size: 28px; margin-bottom: 5px; color: var(--text-color);">
+                    официальные клиенты <strong>Millennium Market</strong>
+                </h2>
+                <p style="font-weight: 400; font-size: 14px; color: #666; max-width: 600px;">
+                    Установите приложение на ваш смартфон для прямого доступа к магазину и установки APPX пакетов в одно нажатие.
+                </p>
+            </div>
+            <!-- Ссылка перехода -->
+            <a href="download/index.html" class="btn btn-primary" style="text-decoration: none;">Скачать клиент ➔</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Каталог</h3>
+                <ul>
+                    <li><a href="#">Скоро...</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Разработчикам</h3>
+                <ul>
+                    <li><a href="" target="_blank">Скоро...</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="https://t.me/SimpSoft" target="_blank">Следите за обновлениями в ТГК!</a></li>
+                    <li><a href="https://github.com/kameton-dev/MEmarket-Basic" target="_blank">GitHub репозитория MEmarket-Basic</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>О нас</h3>
+                <p style="font-size: 12px; line-height: 1.5; font-weight: 300;">Децентрализованный проект сохранения цифрового наследия Windows Phone.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© kameton.dev. Все права че.</p>
+            <p style="font-size: 11px; text-transform: uppercase;">DSGN by kmtn</p>
+        </div>
+    </footer>
+
+</body>
+</html>

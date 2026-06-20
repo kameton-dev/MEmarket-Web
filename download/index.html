@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать — Millennium Market</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/app.js" defer></script>
+</head>
+<body>
+
+    <!-- тост -->
+    <div id="toast">
+        <div class="toast-content">
+            <div class="toast-icon"></div>
+            <div>
+                <strong id="toast-title" style="display: block; font-size: 14px;">Система</strong>
+                <span id="toast-msg" style="font-size: 12px; color: #ccc;">Описание действия</span>
+            </div>
+        </div>
+        <span onclick="hideToast()" style="cursor:pointer; font-size: 18px;">✕</span>
+    </div>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-area" onclick="location.href='../index.html'">
+                <img src="../assets/icon.svg" alt="Logo" class="logo-icon">
+                <div class="logo-text">Millennium Market</div>
+            </div>
+            <div class="theme-selector">
+                <span>ЦВЕТ ТЕМЫ:</span>
+                <div class="color-dot" style="background-color: #00abec;" onclick="setTheme('#00abec', '#0093ca')" title="Teal"></div>
+                <div class="color-dot" style="background-color: #d80073;" onclick="setTheme('#d80073', '#b0005d')" title="Magenta"></div>
+                <div class="color-dot" style="background-color: #a20025;" onclick="setTheme('#a20025', '#7d001b')" title="Crimson"></div>
+                <div class="color-dot" style="background-color: #00a300;" onclick="setTheme('#00a300', '#008000')" title="Emerald"></div>
+                <div class="color-dot" style="background-color: #f0a30a;" onclick="setTheme('#f0a30a', '#cf8b00')" title="Mango"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основная навигация -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="../index.html">Главная</a></li>
+                <li class="active"><a href="index.html">Скачать</a></li>
+                <li><a href="../docs/index.html">Документация</a></li>
+                <li><a href="../about/index.html">О проекте</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="clients-download" style="margin-top: 40px; margin-bottom: 80px;">
+        <div class="clients-container">
+            <h1 style="font-weight: 100; font-size: 42px; margin-bottom: 10px;">
+                скачать клиент Millennium Market
+            </h1>
+            <p class="section-subtitle">Выберите версию официального приложения-клиента для вашего смартфона.</p>
+            <p class="important">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
+            
+            <div class="client-grid">
+                <div class="client-card-metro">
+                    <div class="client-header-info">
+                        <div class="client-icon-tile">
+                            <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
+                        </div>
+                        <div>
+                            <h3>MEmarket UWP [W10M]</h3>
+                            <p class="client-version">Версия 0.0.3.0 Public Beta • 12.0 МБ</p>
+                        </div>
+                    </div>
+                    <p class="client-desc">Полнофункциональный современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <a href="../assets/downloads/MEmarket-UWP_0.0.3.0_ARM.appx" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
+                        <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+                    </div>
+
+                    <!-- Доп компоненты -->
+                    <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
+                        <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 8px;">
+                                <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                    Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 8px;">
+                                <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                    Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 8px;">
+                                <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                    Microsoft.App.Installer.v2019.1019.1.0.appxbundle
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Скриншоты -->
+                    <h4 class="screenshot-title">Скриншоты (прокрутка вправо ➔)</h4>
+                    <div class="screenshot-preview-container">
+                        <div class="screenshot-frame"><img src="../assets/uwp/1.png" alt="Скриншот 1"></div>
+                        <div class="screenshot-frame"><img src="../assets/uwp/2.png" alt="Скриншот 2"></div>
+                        <div class="screenshot-frame"><img src="../assets/uwp/3.png" alt="Скриншот 3"></div>
+                        <div class="screenshot-frame"><img src="../assets/uwp/4.png" alt="Скриншот 4"></div>
+                    </div>
+                </div>
+
+                <div class="client-card-metro">
+                    <div class="client-header-info">
+                        <div class="client-icon-tile">
+                            <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
+                        </div>
+                        <div>
+                            <h3>MEmarket Silverlight [WP8.1]</h3>
+                            <p class="client-version">Версия 0.0.0.1 Public Beta • 4.5 МБ</p>
+                        </div>
+                    </div>
+                    <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
+                    
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <a href="../assets/downloads/MEmarket_Release_ARM.xap" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
+                        <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+                    </div>
+                    
+                    <h4 class="screenshot-title">Скриншоты (прокрутка вправо ➔)</h4>
+                    <div class="screenshot-preview-container">
+                        <div class="screenshot-frame"><img src="../assets/silverlight/1.png" alt="Скриншот 1"></div>
+                        <div class="screenshot-frame"><img src="../assets/silverlight/2.png" alt="Скриншот 2"></div>
+                        <div class="screenshot-frame"><img src="../assets/silverlight/3.png" alt="Скриншот 3"></div>
+                        <div class="screenshot-frame"><img src="../assets/silverlight/4.png" alt="Скриншот 4"></div>
+                        <div class="screenshot-frame"><img src="../assets/silverlight/5.png" alt="Скриншот 5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+            <p>© kameton.dev.</p>
+            <p style="font-size: 11px; text-transform: uppercase;">DSGN by kmtn</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация — Millennium Market</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-area" onclick="location.href='../index.html'">
+                 <img src="../assets/icon.svg" alt="Logo" class="logo-icon">
+                 <div class="logo-text">Millennium Market</div>
+                </div>
+        </div>
+    </header>
+
+    <!-- Основная навигация -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="../download/index.html">Скачать</a></li>
+                <li class="active"><a href="index.html">Документация</a></li>
+                <li><a href="../about/index.html">О проекте</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1 style="font-weight: 100; font-size: 42px; margin-bottom: 30px;">
+            документация Millennium Market
+        </h1>
+        
+        <div class="doc-layout">
+            <aside class="doc-sidebar">
+
+                <ul class="doc-menu" style="margin-bottom: 25px;">
+                    <li class="doc-menu-item active" id="menu-readme" onclick="location.hash='readme'">Начало</li>
+                </ul>
+
+                <!-- блоки документации -->
+                <div class="sidebar-title">Клиенты</div>
+                <ul class="doc-menu" style="margin-bottom: 25px;">
+                    <li class="doc-menu-item" id="menu-install" onclick="location.hash='install'">Установка клиентов MEmarket</li>
+                </ul>
+
+                <div class="sidebar-title">Репозитории (скоро)</div>
+                <ul class="doc-menu" style="margin-bottom: 25px;">
+                    
+                </ul>
+
+                <div class="sidebar-title">Разработчикам (скоро)</div>
+                <ul class="doc-menu">
+                    
+                </ul>
+
+            </aside>
+            
+            <section class="doc-body" id="md-render-area">
+                <p style="color: #666;">Загрузка руководства...</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+            <p>© kameton.dev. Все права не защищены.</p>
+            <p style="font-size: 11px; text-transform: uppercase;">DSGN by kmtn</p>
+        </div>
+    </footer>
+
+    <script>
+        // показ доступных md документации
+        const docsMap = {
+            'readme': { file: 'README.md', id: 'menu-readme' },
+            'install': { file: 'install.md', id: 'menu-install' },
+        };
+        
+        const defaultDoc = 'readme'; 
+
+        async function loadDoc(fileName, element) {
+            // Переключаем активный класс во всех списках меню
+            document.querySelectorAll('.doc-menu-item').forEach(item => item.classList.remove('active'));
+            if (element) {
+                element.classList.add('active');
+            }
+            
+            const renderArea = document.getElementById('md-render-area');
+            renderArea.innerHTML = '<p style="color: #666;">Загрузка руководства...</p>';
+            
+            try {
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error();
+                const text = await response.text();
+                
+                if (typeof marked === 'undefined') {
+                    await loadScript('https://cdn.jsdelivr.net/npm/marked/marked.min.js');
+                }
+                
+                renderArea.innerHTML = marked.parse(text);
+            } catch (e) {
+                renderArea.innerHTML = `
+                    <h2>Ошибка загрузки</h2>
+                    <p>Не удалось открыть файл <strong>${fileName}</strong>.</p>
+                    
+                `;
+            }
+        }
+
+        async function handleRoute() {
+            const hash = window.location.hash.substring(1);
+            const docInfo = docsMap[hash] || docsMap[defaultDoc];
+            const menuElement = document.getElementById(docInfo.id);
+            await loadDoc(docInfo.file, menuElement);
+        }
+        
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = src;
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+        }
+        
+        window.addEventListener('hashchange', handleRoute);
+        document.addEventListener('DOMContentLoaded', handleRoute);
+    </script>
+</body>
+</html>

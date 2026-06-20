@@ -1,0 +1,144 @@
+/* Верхняя панель */
+header {
+    border-bottom: 1px solid var(--border-grey);
+    padding: 10px 0;
+}
+
+.header-top {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo-squares {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 24px;
+    height: 24px;
+}
+
+.logo-squares div {
+    background-color: var(--accent-color);
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.theme-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.color-dot {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.1s;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+}
+
+.color-dot:active {
+    border-color: #000;
+}
+
+/* Навигационная панель */
+nav {
+    background-color: #ffffff;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 15px 20px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-links li a:hover, .nav-links li.active a {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Поисковая строка (скоро) */
+.search-box {
+    display: flex;
+    border: 2px solid var(--border-grey);
+    background-color: #ffffff;
+    width: 250px;
+}
+
+.search-box input {
+    border: none;
+    padding: 6px 10px;
+    width: 100%;
+    outline: none;
+    font-size: 13px;
+}
+
+.search-box button {
+    border: none;
+    background: #ffffff;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #666;
+}
+
+.search-box button:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .search-box {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

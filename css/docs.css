@@ -1,0 +1,166 @@
+/* Макет документации */
+.doc-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.doc-sidebar {
+    border-right: 1px solid var(--border-grey);
+    padding-right: 20px;
+}
+
+.sidebar-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #888888;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.doc-menu {
+    list-style: none;
+}
+
+.doc-menu-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 300;
+    border-left: 4px solid transparent;
+    transition: all 0.1s;
+    margin-bottom: 5px;
+}
+
+.doc-menu-item:hover {
+    background-color: var(--light-grey);
+    border-left-color: var(--border-grey);
+}
+
+.doc-menu-item.active {
+    background-color: var(--light-grey);
+    border-left-color: var(--accent-color);
+    font-weight: 600;
+}
+
+.doc-body {
+    min-height: 400px;
+    padding-bottom: 50px;
+}
+
+/* Стили маркдаун */
+#md-doc-container h1, 
+#md-doc-container h2, 
+#md-doc-container h3 {
+    font-weight: 100;
+    color: var(--accent-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#md-doc-container h1 { font-size: 36px; }
+#md-doc-container h2 { font-size: 28px; }
+#md-doc-container h3 { font-size: 20px; font-weight: 600; color: var(--text-color); }
+
+#md-doc-container p {
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+#md-doc-container code {
+    background-color: var(--light-grey);
+    padding: 2px 6px;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 13px;
+}
+
+#md-doc-container pre {
+    background-color: var(--light-grey);
+    padding: 15px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+}
+
+#md-doc-container pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .doc-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .doc-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-grey);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+}
+
+/* ==========================================================================
+   Помощник рендера маркдаун
+   ========================================================================== */
+
+#md-render-area {
+    line-height: 1.7; 
+    font-weight: 400; 
+    color: var(--text-color);
+}
+
+#md-render-area h1 {
+    font-size: 38px;
+    font-weight: 100;
+    color: var(--text-color);
+    margin-top: 15px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+#md-render-area h2 {
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--text-color);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#md-render-area p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+#md-render-area ul, 
+#md-render-area ol {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding-left: 28px;
+}
+
+#md-render-area li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+#md-render-area hr {
+    border: none;
+    border-top: 1px solid var(--border-grey);
+    margin: 45px 0;
+}
+
+#md-render-area strong {
+    font-weight: 600;
+}
