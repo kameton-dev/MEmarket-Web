@@ -144,3 +144,28 @@
     border-bottom-style: solid !important;
     border-bottom-color: var(--accent-color) !important;
 }
+
+.pivot-header {
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid var(--border-grey);
+    padding-bottom: 10px;
+}
+
+.pivot-item {
+    font-size: 32px;
+    font-weight: 100;
+    color: #888888;
+    cursor: pointer;
+    text-transform: lowercase;
+    transition: color 0.1s;
+}
+
+.pivot-item.active {
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+.pivot-item:hover {
+    color: var(--text-color);
+}

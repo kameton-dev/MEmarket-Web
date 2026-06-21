@@ -1,4 +1,6 @@
-/* Макет документации */
+/* ==========================================================================
+   Макет документации
+   ========================================================================== */
 .doc-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -50,47 +52,6 @@
     padding-bottom: 50px;
 }
 
-/* Стили маркдаун */
-#md-doc-container h1, 
-#md-doc-container h2, 
-#md-doc-container h3 {
-    font-weight: 100;
-    color: var(--accent-color);
-    margin-top: 25px;
-    margin-bottom: 15px;
-}
-
-#md-doc-container h1 { font-size: 36px; }
-#md-doc-container h2 { font-size: 28px; }
-#md-doc-container h3 { font-size: 20px; font-weight: 600; color: var(--text-color); }
-
-#md-doc-container p {
-    font-weight: 400;
-    line-height: 1.6;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-#md-doc-container code {
-    background-color: var(--light-grey);
-    padding: 2px 6px;
-    font-family: Consolas, Monaco, monospace;
-    font-size: 13px;
-}
-
-#md-doc-container pre {
-    background-color: var(--light-grey);
-    padding: 15px;
-    overflow-x: auto;
-    margin-bottom: 20px;
-    border-left: 4px solid var(--accent-color);
-}
-
-#md-doc-container pre code {
-    background-color: transparent;
-    padding: 0;
-}
-
 @media (max-width: 768px) {
     .doc-layout {
         grid-template-columns: 1fr;
@@ -135,6 +96,14 @@
     gap: 12px;
 }
 
+#md-render-area h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
 #md-render-area p {
     font-size: 15px;
     font-weight: 400;
@@ -163,4 +132,29 @@
 
 #md-render-area strong {
     font-weight: 600;
+}
+
+#md-render-area code {
+    background-color: var(--light-grey);
+    padding: 2px 6px;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 13px;
+    color: #d80073;
+}
+
+#md-render-area pre {
+    background-color: var(--light-grey);
+    padding: 15px;
+    overflow-x: auto;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--accent-color);
+}
+
+#md-render-area pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: 13px;
+    display: block;
 }

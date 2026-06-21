@@ -53,88 +53,121 @@
     <section class="clients-download" style="margin-top: 40px; margin-bottom: 80px;">
         <div class="clients-container">
             <h1 style="font-weight: 100; font-size: 42px; margin-bottom: 10px;">
-                скачать клиент Millennium Market
+                загрузки Millennium Market
             </h1>
-            <p class="section-subtitle">Выберите версию официального приложения-клиента для вашего смартфона.</p>
-            <p class="important">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
+            <p class="section-subtitle">Официальные клиенты и вспомогательные инструменты для работы с экосистемой.</p>
             
-            <div class="client-grid">
-                <div class="client-card-metro">
-                    <div class="client-header-info">
-                        <div class="client-icon-tile">
-                            <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
+            <div class="pivot-header" style="margin-bottom: 30px;">
+                <div class="pivot-item active" id="pivot-clients" onclick="switchDownloadPivot('clients')">клиенты</div>
+                <div class="pivot-item" id="pivot-utils" onclick="switchDownloadPivot('utils')">утилиты</div>
+            </div>
+
+            <div class="pivot-pane" id="pane-clients">
+                <p class="important" style="margin-bottom: 25px;">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
+                
+                <div class="client-grid">
+                    <div class="client-card-metro">
+                        <div class="client-header-info">
+                            <div class="client-icon-tile">
+                                <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
+                            </div>
+                            <div>
+                                <h3>MEmarket UWP [W10M]</h3>
+                                <p class="client-version">Версия 0.0.3.0 Public Beta • 12.0 МБ</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3>MEmarket UWP [W10M]</h3>
-                            <p class="client-version">Версия 0.0.3.0 Public Beta • 12.0 МБ</p>
+                        <p class="client-desc">Полнофункциональный современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
+                        
+                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                            <a href="../assets/downloads/MEmarket-UWP_0.0.3.0_ARM.appx" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
+                            <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
                         </div>
-                    </div>
-                    <p class="client-desc">Полнофункциональный современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <a href="../assets/downloads/MEmarket-UWP_0.0.3.0_ARM.appx" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
-                        <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+
+                        <!-- Доп компоненты -->
+                        <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
+                            <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 8px;">
+                                    <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                        Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 8px;">
+                                    <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                        Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 8px;">
+                                    <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                        Microsoft.App.Installer.v2019.1019.1.0.appxbundle
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="screenshot-title">Скриншоты</h4>
+                        <div class="screenshot-preview-container">
+                            <div class="screenshot-frame"><img src="../assets/uwp/1.png" alt="Скриншот 1"></div>
+                            <div class="screenshot-frame"><img src="../assets/uwp/2.png" alt="Скриншот 2"></div>
+                            <div class="screenshot-frame"><img src="../assets/uwp/3.png" alt="Скриншот 3"></div>
+                            <div class="screenshot-frame"><img src="../assets/uwp/4.png" alt="Скриншот 4"></div>
+                        </div>
                     </div>
 
-                    <!-- Доп компоненты -->
-                    <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
-                        <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 8px;">
-                                <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                    Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                    Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 8px;">
-                                <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                    Microsoft.App.Installer.v2019.1019.1.0.appxbundle
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Скриншоты -->
-                    <h4 class="screenshot-title">Скриншоты (прокрутка вправо ➔)</h4>
-                    <div class="screenshot-preview-container">
-                        <div class="screenshot-frame"><img src="../assets/uwp/1.png" alt="Скриншот 1"></div>
-                        <div class="screenshot-frame"><img src="../assets/uwp/2.png" alt="Скриншот 2"></div>
-                        <div class="screenshot-frame"><img src="../assets/uwp/3.png" alt="Скриншот 3"></div>
-                        <div class="screenshot-frame"><img src="../assets/uwp/4.png" alt="Скриншот 4"></div>
-                    </div>
-                </div>
-
-                <div class="client-card-metro">
-                    <div class="client-header-info">
-                        <div class="client-icon-tile">
-                            <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
+                    <div class="client-card-metro">
+                        <div class="client-header-info">
+                            <div class="client-icon-tile">
+                                <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
+                            </div>
+                            <div>
+                                <h3>MEmarket Silverlight [WP8.1]</h3>
+                                <p class="client-version">Версия 0.0.0.1 Public Beta • 4.5 МБ</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3>MEmarket Silverlight [WP8.1]</h3>
-                            <p class="client-version">Версия 0.0.0.1 Public Beta • 4.5 МБ</p>
+                        <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
+                        
+                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                            <a href="../assets/downloads/MEmarket_Release_ARM.xap" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
+                            <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
                         </div>
-                    </div>
-                    <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
-                    
-                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                        <a href="../assets/downloads/MEmarket_Release_ARM.xap" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
-                        <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
-                    </div>
-                    
-                    <h4 class="screenshot-title">Скриншоты (прокрутка вправо ➔)</h4>
-                    <div class="screenshot-preview-container">
-                        <div class="screenshot-frame"><img src="../assets/silverlight/1.png" alt="Скриншот 1"></div>
-                        <div class="screenshot-frame"><img src="../assets/silverlight/2.png" alt="Скриншот 2"></div>
-                        <div class="screenshot-frame"><img src="../assets/silverlight/3.png" alt="Скриншот 3"></div>
-                        <div class="screenshot-frame"><img src="../assets/silverlight/4.png" alt="Скриншот 4"></div>
-                        <div class="screenshot-frame"><img src="../assets/silverlight/5.png" alt="Скриншот 5"></div>
+                        
+                        <h4 class="screenshot-title">Скриншоты</h4>
+                        <div class="screenshot-preview-container">
+                            <div class="screenshot-frame"><img src="../assets/silverlight/1.png" alt="Скриншот 1"></div>
+                            <div class="screenshot-frame"><img src="../assets/silverlight/2.png" alt="Скриншот 2"></div>
+                            <div class="screenshot-frame"><img src="../assets/silverlight/3.png" alt="Скриншот 3"></div>
+                            <div class="screenshot-frame"><img src="../assets/silverlight/4.png" alt="Скриншот 4"></div>
+                            <div class="screenshot-frame"><img src="../assets/silverlight/5.png" alt="Скриншот 5"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!--Утилиты-->
+            <div class="pivot-pane" id="pane-utils" style="display: none;">
+                <div class="client-grid" style="grid-template-columns: 1fr; max-width: 650px; margin: 0 auto;">
+                    <div class="client-card-metro">
+                        <div class="client-header-info">
+                            <div class="client-icon-tile">
+                                <img src="../assets/memarketrepo.ico" alt="memarketrepo" class="client-logo-img">
+                            </div>
+                            <div>
+                                <h3>memarketrepo</h3>
+                                <p class="client-version">Версия 0.0.0.1 • 12 МБ • Windows x64</p>
+                            </div>
+                        </div>
+                        <p class="client-desc">
+                            Cпециальная консольная утилита для создания репозиторий Millennium Market (MEmarket), написанная на Python.
+                        </p>
+                        
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <a href="../assets/downloads/memarketrepo-setup.exe" download class="btn btn-primary" style="flex: 1; text-align: center;" onclick="showToast('Загрузка', 'Началось скачивание memarketrepo')">Скачать (.exe)</a>
+                            <a href="https://github.com/kameton-dev/memarketrepo" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">github</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -146,5 +179,26 @@
         </div>
     </footer>
 
+    <script>
+        function switchDownloadPivot(pane) {
+            // Сбрасываем активные классы у вкладок меню
+            document.querySelectorAll('.pivot-header .pivot-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Скрываем обе панели контента
+            document.getElementById('pane-clients').style.display = 'none';
+            document.getElementById('pane-utils').style.display = 'none';
+
+            // Активируем нужную вкладку и показываем нужный контент
+            if (pane === 'clients') {
+                document.getElementById('pivot-clients').classList.add('active');
+                document.getElementById('pane-clients').style.display = 'block';
+            } else if (pane === 'utils') {
+                document.getElementById('pivot-utils').classList.add('active');
+                document.getElementById('pane-utils').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>

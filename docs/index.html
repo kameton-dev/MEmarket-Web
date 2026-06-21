@@ -45,11 +45,13 @@
                 <div class="sidebar-title">Клиенты</div>
                 <ul class="doc-menu" style="margin-bottom: 25px;">
                     <li class="doc-menu-item" id="menu-install" onclick="location.hash='install'">Установка клиентов MEmarket</li>
+                    <li class="doc-menu-item" id="menu-apps-download" onclick="location.hash='apps-download'">Скачивание приложений</li>
                 </ul>
 
-                <div class="sidebar-title">Репозитории (скоро)</div>
+                <div class="sidebar-title">Репозитории</div>
                 <ul class="doc-menu" style="margin-bottom: 25px;">
-                    
+                    <li class="doc-menu-item" id="menu-about-memarketrepo" onclick="location.hash='about-memarketrepo'">Создание репозиторий с помощью memarketrepo</li>
+                    <li class="doc-menu-item" id="menu-categories" onclick="location.hash='categories'">Категории приложений</li>
                 </ul>
 
                 <div class="sidebar-title">Разработчикам (скоро)</div>
@@ -77,12 +79,14 @@
         const docsMap = {
             'readme': { file: 'README.md', id: 'menu-readme' },
             'install': { file: 'install.md', id: 'menu-install' },
+            'about-memarketrepo': { file: 'about-memarketrepo.md', id: 'menu-about-memarketrepo' },
+            'categories': { file: 'categories.md', id: 'menu-categories' },
+            'apps-download': { file: 'apps-download.md', id: 'menu-apps-download' }
         };
         
         const defaultDoc = 'readme'; 
 
         async function loadDoc(fileName, element) {
-            // Переключаем активный класс во всех списках меню
             document.querySelectorAll('.doc-menu-item').forEach(item => item.classList.remove('active'));
             if (element) {
                 element.classList.add('active');
