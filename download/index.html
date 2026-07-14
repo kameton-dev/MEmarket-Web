@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать — Millennium Market</title>
+    <title>Скачать — MEmarket</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/app.js" defer></script>
 </head>
@@ -53,9 +53,9 @@
     <section class="clients-download" style="margin-top: 40px; margin-bottom: 80px;">
         <div class="clients-container">
             <h1 style="font-weight: 100; font-size: 42px; margin-bottom: 10px;">
-                загрузки Millennium Market
+                актуальные загрузки
             </h1>
-            <p class="section-subtitle">Официальные клиенты и вспомогательные инструменты для работы с экосистемой.</p>
+            <p class="section-subtitle">Официальные клиенты и вспомогательные инструменты тут.</p>
             
             <div class="pivot-header" style="margin-bottom: 30px;">
                 <div class="pivot-item active" id="pivot-clients" onclick="switchDownloadPivot('clients')">клиенты</div>
@@ -76,10 +76,10 @@
                                 <p class="client-version">Версия 0.1.0.0 • 1.0 МБ</p>
                             </div>
                         </div>
-                        <p class="client-desc">Полнофункциональный современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
+                        <p class="client-desc">Современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
                         
                         <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <a href="https://github.com/kameton-dev/MEmarket-UWP/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
+                            <a href="https://github.com/kameton-dev/MEmarket-UWP/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать ➔</a>
                             <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
                         </div>
 
@@ -127,7 +127,7 @@
                         <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
                         
                         <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <a href="https://github.com/kameton-dev/MEmarket-Silverlight/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
+                            <a href="https://github.com/kameton-dev/MEmarket-Silverlight/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать ➔</a>
                             <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
                         </div>
                         
@@ -161,7 +161,7 @@
                         </p>
                         
                         <div style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://github.com/kameton-dev/memarketrepo/releases" download class="btn btn-primary" style="flex: 1; text-align: center;" onclick="showToast('Загрузка', 'Переход по ссылке...')">Скачать (.exe)</a>
+                            <a href="https://github.com/kameton-dev/memarketrepo/releases" download class="btn btn-primary" style="flex: 1; text-align: center;" onclick="showToast('Загрузка', 'Переход по ссылке...')">Скачать ➔</a>
                             <a href="https://github.com/kameton-dev/memarketrepo" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">github</a>
                         </div>
                     </div>
@@ -175,22 +175,19 @@
     <footer>
         <div class="footer-bottom" style="border-top: none; padding-top: 0;">
             <p>© kameton.dev.</p>
-            <p style="font-size: 11px; text-transform: uppercase;">DSGN by kmtn</p>
+            <p style="font-size: 11px; text-transform: uppercase;">Ы</p>
         </div>
     </footer>
 
     <script>
         function switchDownloadPivot(pane) {
-            // Сбрасываем активные классы у вкладок меню
             document.querySelectorAll('.pivot-header .pivot-item').forEach(item => {
                 item.classList.remove('active');
             });
             
-            // Скрываем обе панели контента
             document.getElementById('pane-clients').style.display = 'none';
             document.getElementById('pane-utils').style.display = 'none';
 
-            // Активируем нужную вкладку и показываем нужный контент
             if (pane === 'clients') {
                 document.getElementById('pivot-clients').classList.add('active');
                 document.getElementById('pane-clients').style.display = 'block';
