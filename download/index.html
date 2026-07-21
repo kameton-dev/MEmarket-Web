@@ -24,7 +24,6 @@
     <header>
         <div class="header-top">
             <div class="logo-area" onclick="location.href='../index.html'">
-                <img src="../assets/icon.svg" alt="Logo" class="logo-icon">
                 <div class="logo-text">Millennium Market</div>
             </div>
             <div class="theme-selector">
@@ -62,88 +61,90 @@
                 <div class="pivot-item" id="pivot-utils" onclick="switchDownloadPivot('utils')">утилиты</div>
             </div>
 
+            <!-- Вкладка Клиенты -->
             <div class="pivot-pane" id="pane-clients">
                 <p class="important" style="margin-bottom: 25px;">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
                 
-                <div class="client-grid">
-                    <div class="client-card-metro">
-                        <div class="client-header-info">
-                            <div class="client-icon-tile">
-                                <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
-                            </div>
-                            <div>
-                                <h3>MEmarket UWP [W10M]</h3>
-                                <p class="client-version">Версия 0.1.0.0 • 1.0 МБ</p>
-                            </div>
-                        </div>
-                        <p class="client-desc">Современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
+                <!-- Задана вертикальная сетка grid-template-columns: 1fr; -->
+                <div class="client-grid" style="grid-template-columns: 1fr; gap: 30px;">
+                    
+                    <!-- Карточка UWP (Добавлен класс uwp-card-horizontal) -->
+                    <div class="client-card-metro uwp-card-horizontal">
                         
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <a href="https://github.com/kameton-dev/MEmarket-UWP/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать ➔</a>
-                            <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+                        <!-- Левая часть: Фрейм смартфона -->
+                        <img src="../assets/435_MEmarket-UWP.png" alt="Lumia 435 с клиентом MEmarket UWP" class="uwp-phone-frame">
+                        
+                        <!-- Правая часть: Контент карточки -->
+                        <div class="uwp-card-content" style="flex: 1; display: flex; flex-direction: column;">
+                            <div class="client-header-info">
+                                <div class="client-icon-tile">
+                                    <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
+                                </div>
+                                <div>
+                                    <h3>MEmarket UWP</h3>
+                                    <p class="client-version">Windows 10 Mobile</p>
+                                </div>
+                            </div>
+                            <p class="client-desc">Современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
+                            
+                            <div style="display: flex; gap: 10px; margin-bottom: 20px; max-width: 450px;">
+                                <a href="http://millenniummarket.ru/metadata/me.market.uwp/MEmarket-UWP_latest_arm.appxbundle" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
+                                <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+                            </div>
+
+                            <!-- Доп компоненты -->
+                            <div class="additional-deps" style="margin-top: 15px;">
+                                <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
+                                <ul style="list-style: none; padding: 0;">
+                                    <li style="margin-bottom: 8px;">
+                                        <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                            Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
+                                        </a>
+                                    </li>
+                                    <li style="margin-bottom: 8px;">
+                                        <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                            Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
+                                        </a>
+                                    </li>
+                                    <li style="margin-bottom: 8px;">
+                                        <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
+                                            Microsoft.App.Installer.v2019.1019.1.0.appxbundle
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <!-- Доп компоненты -->
-                        <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
-                            <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 8px;">
-                                    <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                        Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 8px;">
-                                    <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                        Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 8px;">
-                                    <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                        Microsoft.App.Installer.v2019.1019.1.0.appxbundle
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    </div>
+
+                    <!-- Карточка Silverlight -->
+                    <div class="client-card-metro uwp-card-horizontal">
                         
-                        <h4 class="screenshot-title">Скриншоты</h4>
-                        <div class="screenshot-preview-container">
-                            <div class="screenshot-frame"><img src="../assets/uwp/1.png" alt="Скриншот 1"></div>
-                            <div class="screenshot-frame"><img src="../assets/uwp/2.png" alt="Скриншот 2"></div>
-                            <div class="screenshot-frame"><img src="../assets/uwp/3.png" alt="Скриншот 3"></div>
-                            <div class="screenshot-frame"><img src="../assets/uwp/4.png" alt="Скриншот 4"></div>
+                        <img src="../assets/730_MEmarket-Silverlight.png" alt="Lumia 730 с клиентом MEmarket Silverlight" class="uwp-phone-frame">
+                        
+                        <div class="uwp-card-content" style="flex: 1; display: flex; flex-direction: column;">
+                            <div class="client-header-info">
+                                <div class="client-icon-tile">
+                                    <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
+                                </div>
+                                <div>
+                                    <h3>MEmarket Silverlight</h3>
+                                    <p class="client-version">Windows Phone 8.1</p>
+                                </div>
+                            </div>
+                            <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
+                            
+                            <div style="display: flex; gap: 10px; max-width: 450px;">
+                                <a href="http://millenniummarket.ru/metadata/me.market.silverlight/MEmarket_Release_ARM_latest.xap" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
+                                <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="client-card-metro">
-                        <div class="client-header-info">
-                            <div class="client-icon-tile">
-                                <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
-                            </div>
-                            <div>
-                                <h3>MEmarket Silverlight [WP8.1]</h3>
-                                <p class="client-version">Версия 0.0.1.0 • 1.1 МБ</p>
-                            </div>
-                        </div>
-                        <p class="client-desc">Новая и переписанная с нуля версия клиента для Windows Phone 8.1. Развертывание приложений не поддерживается.</p>
-                        
-                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                            <a href="https://github.com/kameton-dev/MEmarket-Silverlight/releases" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать ➔</a>
-                            <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
-                        </div>
-                        
-                        <h4 class="screenshot-title">Скриншоты</h4>
-                        <div class="screenshot-preview-container">
-                            <div class="screenshot-frame"><img src="../assets/silverlight/1.png" alt="Скриншот 1"></div>
-                            <div class="screenshot-frame"><img src="../assets/silverlight/2.png" alt="Скриншот 2"></div>
-                            <div class="screenshot-frame"><img src="../assets/silverlight/3.png" alt="Скриншот 3"></div>
-                            <div class="screenshot-frame"><img src="../assets/silverlight/4.png" alt="Скриншот 4"></div>
-                            <div class="screenshot-frame"><img src="../assets/silverlight/5.png" alt="Скриншот 5"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!--Утилиты-->
+            <!-- Утилиты -->
             <div class="pivot-pane" id="pane-utils" style="display: none;">
                 <div class="client-grid" style="grid-template-columns: 1fr; max-width: 650px; margin: 0 auto;">
                     <div class="client-card-metro">
@@ -153,11 +154,11 @@
                             </div>
                             <div>
                                 <h3>memarketrepo</h3>
-                                <p class="client-version">Версия 0.0.0.1 • 10 МБ • Windows (x64)</p>
+                                <p class="client-version">Windows >=10 • x64</p>
                             </div>
                         </div>
                         <p class="client-desc">
-                            Cпециальная консольная утилита для создания репозиторий Millennium Market (MEmarket), написанная на Python.
+                            Специальная консольная утилита для создания репозиториев Millennium Market (MEmarket), написанная на Python.
                         </p>
                         
                         <div style="display: flex; gap: 10px; margin-top: 10px;">

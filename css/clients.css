@@ -169,3 +169,35 @@
 .pivot-item:hover {
     color: var(--text-color);
 }
+
+.uwp-card-horizontal {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 40px;
+    align-items: center;
+}
+
+.uwp-phone-frame {
+    height: 380px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    
+    /* Красивая мягкая тень по контуру телефона */
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+}
+
+.client-desc {
+    flex-grow: 0 !important;
+}
+
+@media (max-width: 768px) {
+    .uwp-card-horizontal {
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    
+    .uwp-phone-frame {
+        display: none !important;
+    }
+}
