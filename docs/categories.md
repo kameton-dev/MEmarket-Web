@@ -25,11 +25,16 @@
 | "education" | Обучение |
 
 
-**Пример правильного оформления в metadata.yaml:**
+**Пример итогового содержимого metadata.yaml:**
 
-```yaml
-title: "Telegram"
+```
+title: "Telegram" # при желании
+
+summary: 
+  en: "Official Telegram client"
+  ru: "Официальный клиент Telegram"
+
 creator: "Telegram Messenger LLP"
-summary: "Официальный клиент Telegram"
+
 category: "social"
 ```

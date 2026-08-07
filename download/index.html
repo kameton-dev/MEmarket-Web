@@ -72,7 +72,7 @@
                     <div class="client-card-metro uwp-card-horizontal">
                         
                         <!-- Левая часть: Фрейм смартфона -->
-                        <img src="../assets/435_MEmarket-UWP.png" alt="Lumia 435 с клиентом MEmarket UWP" class="uwp-phone-frame">
+                        <img src="../assets/435_MEmarket-UWP.png" alt="435 MEmarket UWP" class="uwp-phone-frame">
                         
                         <!-- Правая часть: Контент карточки -->
                         <div class="uwp-card-content" style="flex: 1; display: flex; flex-direction: column;">
@@ -88,7 +88,7 @@
                             <p class="client-desc">Современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
                             
                             <div style="display: flex; gap: 10px; margin-bottom: 20px; max-width: 450px;">
-                                <a href="http://millenniummarket.ru/metadata/me.market.uwp/MEmarket-UWP_latest_arm.appxbundle" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
+                                <a href="http://millenniummarket.ru/metadata/me.market.uwp/MEmarket-UWP_latest_ARM.appx" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
                                 <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
                             </div>
 
@@ -154,16 +154,61 @@
                             </div>
                             <div>
                                 <h3>memarketrepo</h3>
-                                <p class="client-version">Windows >=10 • x64</p>
+                                <p class="client-version">Windows • Debian • Fedora • PyPI</p>
                             </div>
                         </div>
-                        <p class="client-desc">
+                        <p class="client-desc" style="margin-bottom: 20px;">
                             Специальная консольная утилита для создания репозиториев Millennium Market (MEmarket), написанная на Python.
                         </p>
                         
-                        <div style="display: flex; gap: 10px; margin-top: 10px;">
-                            <a href="https://github.com/kameton-dev/memarketrepo/releases" download class="btn btn-primary" style="flex: 1; text-align: center;" onclick="showToast('Загрузка', 'Переход по ссылке...')">Скачать ➔</a>
-                            <a href="https://github.com/kameton-dev/memarketrepo" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">github</a>
+                        <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
+                            <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 12px;">Способы установки</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 10px;">
+                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
+                                        <span style="display: flex; align-items: center; gap: 8px;">
+                                            Установочный пакет Windows (.exe)
+                                        </span>
+                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
+                                        <span style="display: flex; align-items: center; gap: 8px;">
+                                            <img src="https://cdn.simpleicons.org/debian/333333" alt="Debian" style="width: 14px; height: 14px; display: block;">
+                                            Пакет для Debian / Ubuntu (.deb)
+                                        </span>
+                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
+                                    </a>
+                                </li>
+                                <li style="margin-bottom: 10px;">
+                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
+                                        <span style="display: flex; align-items: center; gap: 8px;">
+                                            <img src="https://cdn.simpleicons.org/fedora/333333" alt="Fedora" style="width: 14px; height: 14px; display: block;">
+                                            Пакет для Fedora / RHEL / CentOS (.rpm)
+                                        </span>
+                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Блок команды PyPI -->
+                            <div style="margin-top: 20px;">
+                                <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 8px;">команда pip (PyPI)</h4>
+                                <div style="background-color: var(--light-grey); padding: 12px 15px; border-left: 4px solid var(--accent-color); font-family: Consolas, Monaco, monospace; font-size: 13px; color: var(--text-color); display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="display: flex; align-items: center; gap: 8px; color: #333333; font-weight: 600;">
+                                        <img src="https://cdn.simpleicons.org/python/333333" alt="PyPI" style="width: 14px; height: 14px; display: block;">
+                                        pip install memarketrepo
+                                    </span>
+                                    <span onclick="copyToClipboard('pip install memarketrepo')" style="cursor: pointer; color: var(--accent-color); font-size: 11px; font-weight: 600; text-transform: uppercase;" class="dep-link">Копировать</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Кнопка перехода в GitHub -->
+                        <div style="display: flex; gap: 10px;">
+                            <a href="https://pypi.org/project/memarketrepo/" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center;">PyPI</a>
+                            <a href="https://github.com/kameton-dev/memarketrepo" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">Исходный код на GitHub</a>
                         </div>
                     </div>
                 </div>

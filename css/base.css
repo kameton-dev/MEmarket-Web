@@ -1,3 +1,10 @@
+*, body, input, button, select, textarea {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
+}
+
+pre, code, kbd, samp, var {
+    font-family: "Consolas", "Monaco", "Courier New", Courier, monospace !important;
+}
 
 :root {
     --accent-color: #00abec;
