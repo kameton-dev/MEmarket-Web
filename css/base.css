@@ -1,5 +1,5 @@
-*, body, input, button, select, textarea {
-    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
+html, body, input, button, select, textarea {
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 }
 
 pre, code, kbd, samp, var {

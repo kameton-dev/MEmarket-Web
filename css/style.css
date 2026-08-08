@@ -1,7 +1,42 @@
-@import url("https://cdn.jsdelivr.net/npm/segoe-fonts@1.0.1/segoe-fonts.min.css");
 @import "base.css";
 @import "header.css";
 @import "hero.css";
 @import "clients.css";
 @import "docs.css";
 @import "footer.css";
+
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Light"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff");
+    font-weight: 100;
+}
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Semilight"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2") format("woff2"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff") format("woff");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff2"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Semibold"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2") format("woff2"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff") format("woff");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Bold"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2") format("woff2"),
+         url("https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff") format("woff");
+    font-weight: 700;
+}
