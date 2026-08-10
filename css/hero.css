@@ -1,8 +1,8 @@
 /* Главная секция */
 .hero {
-    background-color: var(--light-grey);
+    background-color: #f2f2f2;
     padding: 50px 20px;
-    border-bottom: 1px solid var(--border-grey);
+    border-bottom: 1px solid #cccccc;
 }
 
 .hero-container {
@@ -67,5 +67,23 @@
 @media (max-width: 900px) {
     .hero-phone-img {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    section.main-content > div {
+        border: none !important;
+        background-color: transparent !important;
+        
+        padding: 15px 0 !important; 
+    }
+
+    section.main-content > div > div:last-child {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    section.main-content > div > div:first-child {
+        max-width: calc(100% - 75px) !important;
     }
 }

@@ -1,6 +1,6 @@
 /* Верхняя панель */
 header {
-    border-bottom: 1px solid var(--border-grey);
+    border-bottom: 1px solid #cccccc;
     padding: 10px 0;
 }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .logo-squares div {
-    background-color: var(--accent-color);
+    background-color: #00abec;
 }
 
 .logo-icon {
@@ -71,7 +71,7 @@ header {
 /* Навигационная панель */
 nav {
     background-color: #ffffff;
-    border-bottom: 4px solid var(--accent-color);
+    border-bottom: 4px solid #00abec;
 }
 
 .nav-container {
@@ -97,17 +97,18 @@ nav {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .nav-links li a:hover, .nav-links li.active a {
-    background-color: var(--accent-color);
+    background-color: #00abec;
     color: #ffffff;
 }
 
 /* Поисковая строка (скоро) */
 .search-box {
     display: flex;
-    border: 2px solid var(--border-grey);
+    border: 2px solid #cccccc;
     background-color: #ffffff;
     width: 250px;
 }
@@ -129,7 +130,7 @@ nav {
 }
 
 .search-box button:hover {
-    color: var(--accent-color);
+    color: #00abec;
 }
 
 @media (max-width: 600px) {
@@ -140,5 +141,31 @@ nav {
     .search-box {
         width: 100%;
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Растягиваем контейнер меню на 100% ширины */
+    .nav-container {
+        padding: 0 !important; 
+        width: 100%;
+    }
+
+    .nav-links {
+        width: 100%;
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .nav-links li a {
+        padding: 12px 14px; 
+        font-size: 13px;    
     }
 }

@@ -75,7 +75,7 @@
 
     <script>
         // показ доступных md документации
-        const docsMap = {
+        var docsMap = {
             'readme': { file: 'README.md', id: 'menu-readme' },
             'install': { file: 'install.md', id: 'menu-install' },
             'about-memarketrepo': { file: 'about-memarketrepo.md', id: 'menu-about-memarketrepo' },
@@ -85,49 +85,61 @@
         
         const defaultDoc = 'readme'; 
 
-        async function loadDoc(fileName, element) {
-            document.querySelectorAll('.doc-menu-item').forEach(item => item.classList.remove('active'));
+        function loadDoc(fileName, element) {
+            var menuItems = document.querySelectorAll('.doc-menu-item');
+            for (var i = 0; i < menuItems.length; i++) {
+                menuItems[i].classList.remove('active');
+            }
             if (element) {
                 element.classList.add('active');
             }
             
-            const renderArea = document.getElementById('md-render-area');
+            var renderArea = document.getElementById('md-render-area');
             renderArea.innerHTML = '<p style="color: #666;">Загрузка руководства...</p>';
             
-            try {
-                const response = await fetch(fileName);
-                if (!response.ok) throw new Error();
-                const text = await response.text();
-                
-                if (typeof marked === 'undefined') {
-                    await loadScript('https://cdn.jsdelivr.net/npm/marked/marked.min.js');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', fileName, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var text = xhr.responseText;
+                        
+                        if (typeof marked === 'undefined') {
+                            loadScript('https://cdn.jsdelivr.net/npm/marked/marked.min.js', function (err) {
+                                if (!err) {
+                                    renderArea.innerHTML = marked.parse(text);
+                                } else {
+                                    renderArea.innerHTML = '<h2>Ошибка загрузки парсера</h2>';
+                                }
+                            });
+                        } else {
+                            renderArea.innerHTML = marked.parse(text);
+                        }
+                    } else {
+                        renderArea.innerHTML = '<h2>Ошибка загрузки</h2><p>Не удалось открыть файл <strong>' + fileName + '</strong>.</p>';
+                    }
                 }
-                
-                renderArea.innerHTML = marked.parse(text);
-            } catch (e) {
-                renderArea.innerHTML = `
-                    <h2>Ошибка загрузки</h2>
-                    <p>Не удалось открыть файл <strong>${fileName}</strong>.</p>
-                    
-                `;
-            }
+            };
+            xhr.send();
         }
 
         async function handleRoute() {
-            const hash = window.location.hash.substring(1);
-            const docInfo = docsMap[hash] || docsMap[defaultDoc];
-            const menuElement = document.getElementById(docInfo.id);
-            await loadDoc(docInfo.file, menuElement);
+            var hash = window.location.hash.substring(1);
+            var docInfo = docsMap[hash] || docsMap[defaultDoc];
+            var menuElement = document.getElementById(docInfo.id);
+            loadDoc(docInfo.file, menuElement);
         }
         
-        function loadScript(src) {
-            return new Promise((resolve, reject) => {
-                const s = document.createElement('script');
-                s.src = src;
-                s.onload = resolve;
-                s.onerror = reject;
-                document.head.appendChild(s);
-            });
+        function loadScript(src, callback) {
+            var s = document.createElement('script');
+            s.src = src;
+            s.onload = function () {
+                callback(null);
+            };
+            s.onerror = function () {
+                callback(new Error('Failed to load ' + src));
+            };
+            document.head.appendChild(s);
         }
         
         window.addEventListener('hashchange', handleRoute);

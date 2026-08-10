@@ -9,7 +9,7 @@
 }
 
 .doc-sidebar {
-    border-right: 1px solid var(--border-grey);
+    border-right: 1px solid #cccccc;
     padding-right: 20px;
 }
 
@@ -37,13 +37,13 @@
 }
 
 .doc-menu-item:hover {
-    background-color: var(--light-grey);
-    border-left-color: var(--border-grey);
+    background-color:  #f2f2f2;
+    border-left-color: #cccccc;
 }
 
 .doc-menu-item.active {
-    background-color: var(--light-grey);
-    border-left-color: var(--accent-color);
+    background-color: #f2f2f2;
+    border-left-color: #00abec;
     font-weight: 600;
 }
 
@@ -59,7 +59,7 @@
     }
     .doc-sidebar {
         border-right: none;
-        border-bottom: 1px solid var(--border-grey);
+        border-bottom: 1px solid #cccccc;
         padding-right: 0;
         padding-bottom: 20px;
     }
@@ -72,13 +72,13 @@
 #md-render-area {
     line-height: 1.7; 
     font-weight: 400; 
-    color: var(--text-color);
+    color: #000000;
 }
 
 #md-render-area h1 {
     font-size: 38px;
     font-weight: 100;
-    color: var(--text-color);
+    color: #000000;
     margin-top: 15px;
     margin-bottom: 25px;
     line-height: 1.2;
@@ -87,7 +87,7 @@
 #md-render-area h2 {
     font-size: 26px;
     font-weight: 300;
-    color: var(--text-color);
+    color: #000000;
     margin-top: 40px;
     margin-bottom: 20px;
     
@@ -99,7 +99,7 @@
 #md-render-area h3 {
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-color);
+    color: #000000;
     margin-top: 25px;
     margin-bottom: 15px;
 }
@@ -126,7 +126,7 @@
 
 #md-render-area hr {
     border: none;
-    border-top: 1px solid var(--border-grey);
+    border-top: 1px solid #cccccc;
     margin: 45px 0;
 }
 
@@ -135,7 +135,7 @@
 }
 
 #md-render-area code {
-    background-color: var(--light-grey);
+    background-color: #f2f2f2;
     padding: 2px 6px;
     font-family: Consolas, Monaco, "Courier New", monospace;
     font-size: 13px;
@@ -143,12 +143,12 @@
 }
 
 #md-render-area pre {
-    background-color: var(--light-grey);
+    background-color: #f2f2f2;
     padding: 15px;
     overflow-x: auto;
     margin-top: 15px;
     margin-bottom: 25px;
-    border-left: 4px solid var(--accent-color);
+    border-left: 4px solid #00abec;
 }
 
 #md-render-area pre code {

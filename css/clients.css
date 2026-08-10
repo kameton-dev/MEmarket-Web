@@ -33,8 +33,8 @@
 }
 
 .client-card-metro {
-    background-color: var(--light-grey);
-    border: 2px solid var(--border-grey);
+    background-color: #f2f2f2;
+    border: 2px solid #cccccc;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -97,7 +97,7 @@
     overflow-x: auto;
     padding-bottom: 8px;
     scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) var(--light-grey);
+    scrollbar-color: #00abec #f2f2f2;
 }
 
 .screenshot-preview-container::-webkit-scrollbar {
@@ -105,17 +105,17 @@
 }
 
 .screenshot-preview-container::-webkit-scrollbar-track {
-    background: var(--light-grey);
+    background: #f2f2f2;
 }
 
 .screenshot-preview-container::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
+    background: #00abec;
 }
 
 .screenshot-frame {
     width: 85px;
     aspect-ratio: 9/16;
-    border: 1px solid var(--border-grey);
+    border: 1px solid #cccccc;
     background-color: #000000;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -140,15 +140,15 @@
 }
 
 .dep-link:hover {
-    color: var(--accent-hover) !important;
+    color: #0093ca !important;
     border-bottom-style: solid !important;
-    border-bottom-color: var(--accent-color) !important;
+    border-bottom-color: #00abec !important;
 }
 
 .pivot-header {
     display: flex;
     gap: 30px;
-    border-bottom: 1px solid var(--border-grey);
+    border-bottom: 1px solid #cccccc;
     padding-bottom: 10px;
 }
 
@@ -162,12 +162,12 @@
 }
 
 .pivot-item.active {
-    color: var(--accent-color);
+    color: #00abec;
     font-weight: 300;
 }
 
 .pivot-item:hover {
-    color: var(--text-color);
+    color: #000000;
 }
 
 .uwp-card-horizontal {
@@ -200,4 +200,25 @@
     .uwp-phone-frame {
         display: none !important;
     }
+
+    .clients-download {
+        padding: 0 !important;
+    }
+
+    .clients-container h1,
+    .clients-container .section-subtitle,
+    .clients-container .pivot-header,
+    .clients-container .important {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    }
+
+        .client-card-metro {
+        border: none !important;
+        width: 100% !important; 
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    } 
 }
