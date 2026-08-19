@@ -24,7 +24,8 @@
     <header>
         <div class="header-top">
             <div class="logo-area" onclick="location.href='../'">
-            <div class="logo-text">Millennium Market</div>
+                <div class="logo-text">Millennium Market</div>
+            </div> <!-- ИСПРАВЛЕНО: закрыли тег logo-area, теперь дерево DOM валидно -->
         </div>
     </header>
 
@@ -56,11 +57,11 @@
             <div class="pivot-pane" id="pane-clients">
                 <p class="important" style="margin-bottom: 25px;">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
                 
-                <!-- Задана вертикальная сетка grid-template-columns: 1fr; -->
+                <!-- Задана вертикальная сетка (добавлен margin-bottom у карточек для IE11) -->
                 <div class="client-grid" style="grid-template-columns: 1fr; gap: 30px;">
                     
-                    <!-- Карточка UWP (Добавлен класс uwp-card-horizontal) -->
-                    <div class="client-card-metro uwp-card-horizontal">
+                    <!-- Карточка UWP -->
+                    <div class="client-card-metro uwp-card-horizontal" style="margin-bottom: 30px;">
                         
                         <!-- Левая часть: Фрейм смартфона -->
                         <img src="../assets/435_MEmarket-UWP.png" alt="435 MEmarket UWP" class="uwp-phone-frame">
