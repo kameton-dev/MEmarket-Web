@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скачать — MEmarket</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/app.js" defer></script>
+    <title>MEmarket — Магазин приложений Windows Phone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
 </head>
 <body>
 
@@ -23,9 +23,9 @@
 
     <header>
         <div class="header-top">
-            <div class="logo-area" onclick="location.href='../'">
-                <div class="logo-text">Millennium Market</div>
-            </div> <!-- ИСПРАВЛЕНО: закрыли тег logo-area, теперь дерево DOM валидно -->
+            <div class="logo-area" onclick="filterCategory('all')">
+                 <div class="logo-text">Millennium Market</div>
+                </div>
         </div>
     </header>
 
@@ -33,227 +33,127 @@
     <nav>
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="../">Главная</a></li>
-                <li class="active"><a href="./">Скачать</a></li>
-                <li><a href="../docs/">Документация</a></li>
-                <li><a href="../about/">О проекте</a></li>
+                <li class="active"><a href="./">Главная</a></li>
+                <li><a href="download/">Скачать</a></li>
+                <li><a href="docs/">Документация</a></li>
+                <li><a href="about/">О проекте</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="clients-download" style="margin-top: 40px; margin-bottom: 80px;">
-        <div class="clients-container">
-            <h1 style="font-weight: 100; font-size: 42px; margin-bottom: 10px;">
-                актуальные загрузки
-            </h1>
-            <p class="section-subtitle">Официальные клиенты и вспомогательные инструменты тут.</p>
+    <!-- Системное предупреждение об утере доступа к Telegram (IE11/WP8.1-совместимый макет) -->
+    <div style="background-color: #a20025; color: #ffffff; width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 15px 20px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; gap: 20px; position: relative;">
             
-            <div class="pivot-header" style="margin-bottom: 30px;">
-                <div class="pivot-item active" id="pivot-clients" onclick="switchDownloadPivot('clients')">клиенты</div>
-                <div class="pivot-item" id="pivot-utils" onclick="switchDownloadPivot('utils')">утилиты</div>
+            <!-- Левая текстовая часть (защищена от наезда на иконку) -->
+            <div style="max-width: calc(100% - 50px); box-sizing: border-box;">
+                <strong style="display: block; font-size: 16px; font-weight: 600; margin-bottom: 4px; text-transform: uppercase;">внимание</strong>
+                <p style="font-size: 13px; font-weight: 400; line-height: 1.5; margin: 0;">
+                    Разработчик временно утратил доступ к личному аккаунту Telegram и управлению официальным каналом. До восстановления доступа никаких новостей в канале выходить не будет. Будьте осторожны и не ведитесь на возможные провокации.
+                </p>
+                <p style="font-size: 13px; font-weight: 400; line-height: 1.5; margin: 0;">
+                    Проект MEmarket продолжает работу в штатном режиме. Проблема с Telegram уже решается.
+                </p>
             </div>
 
-            <!-- Вкладка Клиенты -->
-            <div class="pivot-pane" id="pane-clients">
-                <p class="important" style="margin-bottom: 25px;">ВНИМАНИЕ! Приложения сейчас находится в стадии активной разработки. Будьте готовы к частым обновлениям и возможным ошибкам</p>
-                
-                <!-- Задана вертикальная сетка (добавлен margin-bottom у карточек для IE11) -->
-                <div class="client-grid" style="grid-template-columns: 1fr; gap: 30px;">
-                    
-                    <!-- Карточка UWP -->
-                    <div class="client-card-metro uwp-card-horizontal" style="margin-bottom: 30px;">
-                        
-                        <!-- Левая часть: Фрейм смартфона -->
-                        <img src="../assets/435_MEmarket-UWP.png" alt="435 MEmarket UWP" class="uwp-phone-frame">
-                        
-                        <!-- Правая часть: Контент карточки -->
-                        <div class="uwp-card-content" style="flex: 1; display: flex; flex-direction: column;">
-                            <div class="client-header-info">
-                                <div class="client-icon-tile">
-                                    <img src="../assets/uwp/mm-uwp.png" alt="MEmarket UWP" class="client-logo-img">
-                                </div>
-                                <div>
-                                    <h3>MEmarket UWP</h3>
-                                    <p class="client-version">Windows 10 Mobile</p>
-                                </div>
-                            </div>
-                            <p class="client-desc">Современный клиент для Windows 10 Mobile. Поддерживает прямую установку приложений без подключения к ПК.</p>
-                            
-                            <div style="display: flex; gap: 10px; margin-bottom: 20px; max-width: 450px;">
-                                <a href="http://millenniummarket.ru/metadata/me.market.uwp/MEmarket-UWP_latest_ARM.appx" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('W10M')">Скачать</a>
-                                <a href="https://github.com/kameton-dev/MEmarket-UWP" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
-                            </div>
+            <!-- Правая часть: Иконка предупреждения (warning.svg) -->
+            <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
+                <img src="assets/Warning.svg" alt="Warning Icon" style="width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1);">
+            </div>
+            
+        </div>
+    </div>
 
-                            <!-- Доп компоненты -->
-                            <div class="additional-deps" style="margin-top: 15px;">
-                                <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 10px;">Дополнительные компоненты</h4>
-                                <ul style="list-style: none; padding: 0;">
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="../assets/downloads/Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                            Microsoft.VCLibs.140.00_14.0.27323.0_arm__8wekyb3d8bbwe.appx
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="../assets/downloads/Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                            Microsoft_VCLibs_140_00_UWPDesktop_14_0_27629_0_arm_8wekyb3d8bbwe.appx
-                                        </a>
-                                    </li>
-                                    <li style="margin-bottom: 8px;">
-                                        <a href="../assets/downloads/Microsoft.App.Installer.v2019.1019.1.0.appxbundle" download class="dep-link" style="display: block; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px; word-break: break-all;">
-                                            Microsoft.App.Installer.v2019.1019.1.0.appxbundle
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Карточка Silverlight -->
-                    <div class="client-card-metro uwp-card-horizontal">
-                        
-                        <img src="../assets/730_MEmarket-Silverlight.png" alt="Lumia 730 с клиентом MEmarket Silverlight" class="uwp-phone-frame">
-                        
-                        <div class="uwp-card-content" style="flex: 1; display: flex; flex-direction: column;">
-                            <div class="client-header-info">
-                                <div class="client-icon-tile">
-                                    <img src="../assets/silverlight/mm-silverlight.png" alt="MEmarket Silverlight" class="client-logo-img">
-                                </div>
-                                <div>
-                                    <h3>MEmarket Silverlight</h3>
-                                    <p class="client-version">Windows Phone 8.1</p>
-                                </div>
-                            </div>
-                            <p class="client-desc">ПЕРЕД ИСПОЛЬЗОВАНИЕМ НЕОБХОДИМО УСТАНОВИТЬ CMD Injector И ИНЖЕКТНУТЬ УСТРОЙСТВО.
-                                Клиент децентрализованного магазина приложений Millennium Market для Windows Phone 8.1, поддерживающий развертывание приложений прямо на устройство</p>
-                            
-                            <div style="display: flex; gap: 10px; max-width: 450px;">
-                                <a href="http://millenniummarket.ru/metadata/me.market.silverlight/MEmarket_Release_ARM_latest.xap" class="btn btn-primary" style="flex: 1; text-align: center;" onclick="simulateClientDownload('WP8.1')">Скачать</a>
-                                <a href="https://github.com/kameton-dev/MEmarket-Silverlight" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
-                            </div>
-                            
-<a href="https://store.live.net.co/app/787" target="_blank"><img src="https://edge.live.net.co/images/store/2025_GetButton_Black.png" style="width: 256px;" alt="Get MEmarket Silverlight from Live Store"></a>
-                    
-                        </div>
-                    </div>
-
+    <section class="hero" id="hero-section">
+        <div class="hero-container">
+            <div class="hero-info">
+                <h1>новая жизнь для <strong>Windows Phone</strong></h1>
+                <p>Добро пожаловать на сайт магазина приложений MEmarket для Windows Phone 8.1 и Windows 10 Mobile. Проект восстанавливает экосистему на базе независимых репозиториев, наполняемых сообществом. Загружайте клиенты, подключайте сторонние источники и оставайтесь на любимой платформе.</p>
+                <div class="hero-actions">
+                    <a href="download/index.html" class="btn btn-primary">Скачать клиенты</a>
+                    <a href="https://submit.millenniummarket.ru/" class="btn btn-primary">Добавить приложение</a>
+                    <a href="https://t.me/SimpSoft" target="_blank" class="btn btn-secondary">Подписаться на ТГК SimpleSoftware</a>
                 </div>
             </div>
 
-            <!-- Утилиты -->
-            <div class="pivot-pane" id="pane-utils" style="display: none;">
-                <div class="client-grid" style="grid-template-columns: 1fr; max-width: 650px; margin: 0 auto;">
-                    <div class="client-card-metro">
-                        <div class="client-header-info">
-                            <div class="client-icon-tile">
-                                <img src="../assets/memarketrepo.ico" alt="memarketrepo" class="client-logo-img">
-                            </div>
-                            <div>
-                                <h3>memarketrepo</h3>
-                                <p class="client-version">Windows • Debian • Fedora • PyPI</p>
-                            </div>
-                        </div>
-                        <p class="client-desc" style="margin-bottom: 20px;">
-                            Специальная консольная утилита для создания репозиториев Millennium Market (MEmarket), написанная на Python.
-                        </p>
-                        
-                        <div class="additional-deps" style="margin-top: 15px; margin-bottom: 25px;">
-                            <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 12px;">Способы установки</h4>
-                            <ul style="list-style: none; padding: 0;">
-                                <li style="margin-bottom: 10px;">
-                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
-                                        <span style="display: flex; align-items: center; gap: 8px;">
-                                            Установочный пакет Windows (.exe)
-                                        </span>
-                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 10px;">
-                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
-                                        <span style="display: flex; align-items: center; gap: 8px;">
-                                            <img src="https://cdn.simpleicons.org/debian/333333" alt="Debian" style="width: 14px; height: 14px; display: block;">
-                                            Пакет для Debian / Ubuntu (.deb)
-                                        </span>
-                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 10px;">
-                                    <a href="https://github.com/kameton-dev/memarketrepo/releases/latest" target="_blank" class="dep-link" style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--accent-color); text-decoration: none; border-bottom: 1px dashed var(--border-grey); padding-bottom: 6px;">
-                                        <span style="display: flex; align-items: center; gap: 8px;">
-                                            <img src="https://cdn.simpleicons.org/fedora/333333" alt="Fedora" style="width: 14px; height: 14px; display: block;">
-                                            Пакет для Fedora / RHEL / CentOS (.rpm)
-                                        </span>
-                                        <span style="color: #888; font-size: 11px;">GitHub Releases</span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <!-- Блок команды PyPI -->
-                            <div style="margin-top: 20px;">
-                                <h4 style="font-size: 11px; text-transform: uppercase; font-weight: 600; color: #888888; margin-bottom: 8px;">команда pip (PyPI)</h4>
-                                <div style="background-color: var(--light-grey); padding: 12px 15px; border-left: 4px solid var(--accent-color); font-family: Consolas, Monaco, monospace; font-size: 13px; color: var(--text-color); display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="display: flex; align-items: center; gap: 8px; color: #333333; font-weight: 600;">
-                                        <img src="https://cdn.simpleicons.org/python/333333" alt="PyPI" style="width: 14px; height: 14px; display: block;">
-                                        pip install memarketrepo
-                                    </span>
-                                    <span onclick="copyToClipboard('pip install memarketrepo')" style="cursor: pointer; color: var(--accent-color); font-size: 11px; font-weight: 600; text-transform: uppercase;" class="dep-link">Копировать</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Кнопка перехода в GitHub -->
-                        <div style="display: flex; gap: 10px;">
-                            <a href="https://pypi.org/project/memarketrepo/" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center;">PyPI</a>
-                            <a href="https://github.com/kameton-dev/memarketrepo" target="_blank" class="btn btn-secondary" style="flex: 1; text-align: center;">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+             <img src="assets/phone.png" alt="WPhone" class="hero-phone-img">
         </div>
     </section>
 
-    <!-- Футер -->
+    <!-- Карточки -->
+    <section class="main-content" style="margin-top: 40px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 25px;">
+        
+        <div style="border: 2px solid var(--border-grey); padding: 30px; background-color: var(--light-grey); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; position: relative; overflow: hidden;">
+            
+            <div style="max-width: calc(100% - 120px); box-sizing: border-box;">
+                <h2 style="font-weight: 100; font-size: 28px; margin-bottom: 5px; color: var(--text-color);">
+                    мульти-репозитории
+                </h2>
+                <p style="font-weight: 400; font-size: 14px; color: #666; max-width: 600px; margin-bottom: 10px; line-height: 1.5;">
+                    В приложениях MEmarket вы можете подключать много репозиториев одновременно, а также легко их создавать. Проект не зависит от одного сервера, что дает возможность чувствовать себя чуть свободнее в и так уже вымирающих ОС.
+                </p>
+                <p style="font-weight: 400; font-size: 14px; color: #666; max-width: 600px; margin: 0;">
+                    Идея вдохновения — Cydia, LiveStore (OneLive Team), F-Droid
+                </p>
+            </div>
+
+            <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background-color: var(--accent-color); display: flex; align-items: center; justify-content: center; padding: 0; box-sizing: border-box; transition: background-color 0.2s;">
+                <img src="assets/multirepo.svg" alt="Multirepo Icon" style="width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1);">
+            </div>
+            
+        </div>
+
+        <div style="border: 2px solid var(--border-grey); padding: 30px; background-color: var(--light-grey); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; position: relative; overflow: hidden;">
+            
+            <div style="max-width: calc(100% - 120px); box-sizing: border-box;">
+                <h2 style="font-weight: 100; font-size: 28px; margin-bottom: 5px; color: var(--text-color);">
+                    поддержка сообщества
+                </h2>
+                <p style="font-weight: 400; font-size: 14px; color: #666; max-width: 600px; margin: 0; line-height: 1.5;">
+                    Чем больше аудитория — тем больше будет масштаб данного проекта! Делитесь информацией с друзьями, создавайте и распространяйте собственные репозитории, скачивайте и устанавливайте приложения с MEmarket: все это поможет увеличить и мотивацию разработчика, и положительные отзывы пользователей.                
+                </p>
+            </div>
+
+            <div style="position: absolute; top: 0; right: 0; width: 100px; height: 100px; background-color: var(--accent-color); display: flex; align-items: center; justify-content: center; padding: 0; box-sizing: border-box; transition: background-color 0.2s;">
+                <img src="assets/community.svg" alt="Community Icon" style="width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1);">
+            </div>
+            
+        </div>
+    </section>
+
     <footer>
-        <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-            <p>© kameton.dev.</p>
-            <p style="font-size: 11px; text-transform: uppercase;">Ы</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Каталог</h3>
+                <ul>
+                    <li><a href="#">Скоро...</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Разработчикам</h3>
+                <ul>
+                    <li><a href="https://submit.millenniummarket.ru/" target="_blank">Добавить приложение в репозиторий MEmarket-Basic</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Полезные ссылки</h3>
+                <ul>
+                    <li><a href="https://t.me/SimpSoft" target="_blank">Следите за обновлениями в ТГК!</a></li>
+                    <li><a href="https://github.com/kameton-dev/MEmarket-Basic" target="_blank">GitHub репозитория MEmarket-Basic</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>дополнительно</h3>
+                <ul>
+                    <li><a href="https://github.com/kameton-dev/MEmarket-Web" target="_blank">GitHub сайта</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© kameton.dev. Все права че.</p>
+            <p style="font-size: 11px; text-transform: uppercase;">DSGN by kmtn</p>
         </div>
     </footer>
 
-    <script>
-        function switchDownloadPivot(pane) {
-            var items = document.querySelectorAll('.pivot-header .pivot-item');
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.remove('active');
-            }
-            
-            document.getElementById('pane-clients').style.display = 'none';
-            document.getElementById('pane-utils').style.display = 'none';
-
-            if (pane === 'clients') {
-                document.getElementById('pivot-clients').classList.add('active');
-                document.getElementById('pane-clients').style.display = 'block';
-            } else if (pane === 'utils') {
-                document.getElementById('pivot-utils').classList.add('active');
-                document.getElementById('pane-utils').style.display = 'block';
-            }
-        }
-
-        function copyToClipboard(text) {
-            var textarea = document.createElement('textarea');
-            textarea.value = text;
-            textarea.style.position = 'fixed'; // Предотвращает прокрутку страницы вниз
-            document.body.appendChild(textarea);
-            textarea.select();
-            try {
-                document.execCommand('copy');
-                showToast('Система', 'Команда установки скопирована в буфер обмена');
-            } catch (err) {
-                showToast('Ошибка', 'Не удалось скопировать команду');
-            }
-            document.body.removeChild(textarea);
-        }
-    </script>
 </body>
 </html>
