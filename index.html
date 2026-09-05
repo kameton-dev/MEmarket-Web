@@ -42,7 +42,7 @@
     </nav>
 
     <!-- Системное предупреждение об утере доступа к Telegram (IE11/WP8.1-совместимый макет) -->
-    <div style="background-color: #a20025; color: #ffffff; width: 100%;">
+    <div style="background-color: #FFB900; color: #000000; width: 100%;">
         <div style="max-width: 1100px; margin: 0 auto; padding: 15px 20px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; gap: 20px; position: relative;">
             
             <!-- Левая текстовая часть (защищена от наезда на иконку) -->
@@ -52,7 +52,7 @@
                     К сожалению, я потерял доступ к своему основному аккаунту (@morat_krutoi) и больше не могу управлять старым каналом. Все публикации там прекращены, а сам канал мне больше не принадлежит — пожалуйста, будьте осторожны и не переходите по ссылкам, которые могут там появиться.
                 </p>
                 <p style="font-size: 13px; font-weight: 400; line-height: 1.5; margin: 0;">
-                    Проект продолжает работать в штатном режиме. Все свежие новости, релизы и анонсы отныне будут публиковаться только здесь. Переходите и оставайтесь на связи ;)
+                    Проект продолжает работать в штатном режиме. Все свежие новости, релизы и анонсы отныне будут публиковаться только там. Переходите и оставайтесь на связи ;)
                 </p>
                 <p style="font-size: 13px; font-weight: 400; line-height: 1.5; margin: 0;">
                     https://t.me/SimpSoftware (ну или нажмите на кнопку "Подписаться на ТГК" ниже)
@@ -60,26 +60,29 @@
             </div>
 
             <div style="width: 32px; height: 32px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                <img src="assets/Warning.svg" alt="Warning Icon" style="width: 100%; height: 100%; object-fit: contain; filter: brightness(0) invert(1);">
+                <img src="assets/megaphone.svg" alt="Icon" style="width: 100%; height: 100%; object-fit: contain; ">
             </div>
             
         </div>
     </div>
 
     <section class="hero" id="hero-section">
-        <div class="hero-container">
+        
+        <!-- Левый баннер-коллаж на всю высоту (assets/tiles-banner.png) -->
+        <img src="assets/tiles-banner.png" alt="Windows Phone Apps Collage" class="hero-banner-left">
+
+        <!-- Правый текстовый блок с кнопками -->
+        <div class="hero-info-wrapper">
             <div class="hero-info">
-                <h1>новая жизнь для <strong>Windows Phone</strong></h1>
-                <p>Добро пожаловать на сайт магазина приложений MEmarket для Windows Phone 8.1 и Windows 10 Mobile. Проект восстанавливает экосистему на базе независимых репозиториев, наполняемых сообществом. Загружайте клиенты, подключайте сторонние источники и оставайтесь на любимой платформе.</p>
+                <h1>новая жизнь для Windows Phone</h1>
+                <p>Добро пожаловать на сайт магазина приложений MEmarket для Windows Phone 8.1 и Windows 10 Mobile! Загружайте клиенты, подключайте сторонние источники и оставайтесь на любимой платформе.</p>
                 <div class="hero-actions">
-                    <a href="download/index.html" class="btn btn-primary">Скачать клиенты</a>
-                    <!-- <a href="https://submit.millenniummarket.ru/" class="btn btn-primary">Добавить приложение</a> -->
-                    <a href="https://t.me/SimpSoftware" target="_blank" class="btn btn-secondary">Подписаться на ТГК SimpleSoftware</a> 
+                    <a href="download/" class="btn btn-primary">Скачать клиенты</a>
+                    <a href="https://t.me/SimpSoftware" target="_blank" class="btn btn-secondary">Подписаться на ТГК</a> 
                 </div>
             </div>
-
-             <img src="assets/phone.png" alt="WPhone" class="hero-phone-img">
         </div>
+        
     </section>
 
     <!-- Карточки -->
